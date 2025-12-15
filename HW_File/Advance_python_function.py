@@ -2,8 +2,8 @@
 num = int(input("Enter an number: "))
 odd_number = [i for i in range(num) if i % 2 != 0]
 even_number = [i for i in range(num) if i % 2 == 0]
-print("Odd numbers are:", odd_number)
-print("Even numbers are:", even_number)
+print("\n","Odd numbers are:", odd_number,"\n")
+print("\n","Even numbers are:", even_number)
 
 # Converting fruit first letter into uppercase
 fruits = ['apple', 'banana', 'cherry', 'kiwi', 'mango']
