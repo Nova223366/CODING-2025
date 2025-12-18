@@ -2,7 +2,7 @@ import random
 import string
 print("Welcome to Random password generator! ")
 print("this can make password above to 62 characters lenths (last limit).")
-print("Make lowercase, uppercase and digits.")
+print("Make lowercase, uppercase and digits.""\n")
 want = input("Do you want to generate an random password? (yes/no): ").lower()
 if want == 'yes':
     while want == 'yes':
