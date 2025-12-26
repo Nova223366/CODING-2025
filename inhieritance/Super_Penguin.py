@@ -20,6 +20,7 @@ class Penguin (Bird):
     def run(self):
         print("Run faster")
 peggy = Penguin()
+Bird.who_is_this(peggy)               # For bird like Situation method
 peggy.who_is_this()
 peggy.swim()
 peggy.run()
