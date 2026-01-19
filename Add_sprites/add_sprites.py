@@ -3,14 +3,14 @@ import random
 
 pygame.init()
 
-# Screen size
+
 WIDTH, HEIGHT = 500, 400
 
-# Custom events
+
 SPRITE_COLOR_CHANGE = pygame.USEREVENT + 1
 BACKGROUND_COLOR_CHANGE = pygame.USEREVENT + 2
 
-# Colors
+
 BLUE = pygame.Color('blue')
 LIGHTBLUE = pygame.Color('lightblue')
 DARKBLUE = pygame.Color('darkblue')
@@ -51,14 +51,14 @@ class Sprite(pygame.sprite.Sprite):
     def change_color(self):
         self.image.fill(random.choice([YELLOW, MAGENTA, ORANGE, WHITE]))
 
-# Setup screen
+
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sprite Color Change on Boundary Hit")
 
 bg_color = BLUE
 screen.fill(bg_color)
 
-# Sprite group
+
 all_sprites = pygame.sprite.Group()
 sp1 = Sprite(WHITE, 20, 30)
 sp1.rect.topleft = (
