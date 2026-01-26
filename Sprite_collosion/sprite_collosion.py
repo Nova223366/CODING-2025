@@ -7,7 +7,7 @@ FONT_SIZE = 72
 
 pygame.init()
 
-background_color = (0, 0, 0)
+background_color = (2, 2, 5)
 
 font = pygame.font.SysFont("Times New Roman", FONT_SIZE)
 
