@@ -3,16 +3,16 @@ import random
 import pygame
 
 # Constants
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 500
-PLAYER_START_X = 370
-PLAYER_START_Y = 380
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
+PLAYER_START_X = 351
+PLAYER_START_Y = 698
 ENEMY_START_Y_MIN = 50
 ENEMY_START_Y_MAX = 150
-ENEMY_SPEED_X = 4
-ENEMY_SPEED_Y = 40
-BULLET_SPEED_Y = 10
-COLLISION_DISTANCE = 27
+ENEMY_SPEED_X = 1
+ENEMY_SPEED_Y = 2
+BULLET_SPEED_Y = 4
+COLLISION_DISTANCE = 20
 
 pygame.init()
 
@@ -20,15 +20,22 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Background
-background = pygame.image.load('background.png')
+background = pygame.image.load(
+    r'C:\CODING 2025\Space_invader\png-transparent-starry-night-night-sky-star-nebula-galaxy-background-texture-other-atmosphere-thumbnail.png'
+)
 
-#csaptions and Icon
+background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
+
+
+
+#captions and Icon
 pygame.display.set_caption("Space Invader")
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('C:\CODING 2025\Space_invader\png-transparent-pistol-gun-computer-icons-rifle-weapon-weapon-text-logo-handgun-thumbnail.png')
 pygame.display.set_icon(icon)
 
 #Player
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('C:\CODING 2025\Space_invader\png-transparent-thunder-plane-airplane-red-plane-game-plane-pixel-sprite-airplane-game-food-vertebrate-thumbnail.png')
+playerImg = pygame.transform.scale(playerImg, (64, 64))
 playerX = PLAYER_START_X
 playerY = PLAYER_START_Y
 playerX_change = 0
@@ -42,14 +49,16 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyIMG = pygame.image.load('bullent.png')
+    enemyImg.append(pygame.image.load('C:\CODING 2025\Space_invader\png-transparent-action-toy-figures-figurine-national-entertainment-collectibles-association-alien-prototype-alian-ccedil-as-action-toy-figures-suit-statue-thumbnail.png'))
+    enemyImg[i] = pygame.transform.scale(enemyImg[i], (64, 64))
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64)) #64 is the size of the enemy
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_Y_MAX))
     enemyX_change.append(ENEMY_SPEED_X)
     enemyY_change.append(ENEMY_SPEED_Y)
 
 # Bullet
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('C:\CODING 2025\Space_invader\image.png')
+bulletImg = pygame.transform.scale(bulletImg, (32, 32))
 bulletX = 0
 bulletY = PLAYER_START_Y
 bullet_change = BULLET_SPEED_Y
@@ -69,7 +78,7 @@ def show_score(x, y):
     score = font.render("Score : " + str(score_value), True, (255, 255, 255))
     screen.blit(score, (x, y))
 
-    # render finction help to display the font 
+    # render function help to display the font 
 def game_over_text():
     over_text = over_font.render("GAME OVER", True, (255, 255, 255))
     screen.blit(over_text, (200, 250))
