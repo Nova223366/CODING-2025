@@ -2,7 +2,7 @@ from tkinter import *
 import datetime
 root = Tk()
 root.title("Age calculator app")
-root.geometry("400x400")
+root.geometry("500x500")
 
 lable1 = Label(root, text = "Enter your name")
 lable1.pack()
@@ -30,12 +30,13 @@ def display():
     date = int(date_entry.get())
     month = int(month_entry.get())
     year = int(year_entry.get())
-    current_datetime = datetime.datetime.now()
-    current_year = current_datetime.year
+    current_year = datetime.datetime.now().year
     age = current_year - year
     text_box.insert(END,"\t"f"{name}, your age is {age}\n")
+
 btn = Button(root, text="Submit", command=display)
-btn.pack()
+btn.pack() 
+
 text_box = Text(root, height=5)
 text_box.pack()
 root.mainloop()
